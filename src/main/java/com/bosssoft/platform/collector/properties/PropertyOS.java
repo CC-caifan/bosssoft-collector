@@ -10,7 +10,7 @@ import com.bosssoft.platform.collector.Constants;
 
 
 public class PropertyOS implements ServerProperty{
-	
+	//获取日志
 	private static Logger log = LoggerFactory.getLogger(PropertyOS.class);
 
 	private String errorMessage;

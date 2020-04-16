@@ -17,7 +17,7 @@ public class CollectorUtils {
         }
         c.setTime(date);// 设置日历时间
         c.add(Calendar.MONTH, number);// 在日历的月份上增加指定个月
-        String strDate = sdf.format(c.getTime());// 的到你想要得6个月后的日期
+        String strDate = sdf.format(c.getTime());// 得到你想要得6个月后的日期
         return strDate;
     }
 

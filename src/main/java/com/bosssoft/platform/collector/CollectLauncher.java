@@ -33,6 +33,7 @@ public class CollectLauncher {
 	private static Map<String,Object> serverPropertyValues=new HashMap<String, Object>();
 	
 	public static void main(String[] args) {
+		//将日志信息写入配置的文件中
 		log.info("is collecting server information........");
 		initServerProperties();
 		
@@ -47,7 +48,7 @@ public class CollectLauncher {
 		  }
 		    
 		    
-		  File file=	createServerPropertyFile();
+		  File file=createServerPropertyFile();
 		  log.info("bosssoft-collector execution success and create server-info file on "+file.getPath());
 		}
 		
@@ -86,13 +87,17 @@ public class CollectLauncher {
 	}
 	
 	private static boolean collectServerPropertyValues(){
+		//依次传递PropertyCpu();PropertyIP()
 		for (ServerProperty serverProperty : serverProperties) {
+			//获取相关信息
 			String value=serverProperty.propertyValue();
+			//判断是否出现异常
 			if(StringUtils.isNotEmpty(serverProperty.getErrorMessage())){
 				log.error("bosssoft-collector execution failure! because "+serverProperty.getErrorMessage());
 				return false;
 			}else{
-				serverPropertyValues.put(serverProperty.propertyName(), value);
+				//如果没有出现异常将获取到的数据封装
+				serverPropertyValues.put(serverProperty.propertyName(),value);
 			}
 		}
 		return true;

@@ -12,7 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public abstract class SelectableProperty implements ServerProperty {
-    
+    //获取日志
     private static Logger log = LoggerFactory.getLogger(SelectableProperty.class);
     
     protected  Map<Integer,String> options=new HashMap<Integer, String>();

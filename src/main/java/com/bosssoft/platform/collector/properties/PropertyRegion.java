@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 import com.bosssoft.platform.collector.Constants;
 
 public class PropertyRegion  implements ServerProperty{
-
+    //获取日志
     private static Logger log = LoggerFactory.getLogger(PropertyRegion.class);
     
     protected  String errorMessage;
